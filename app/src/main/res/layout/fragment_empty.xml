@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ========== 空状态页面布局（互关、粉丝、朋友标签页） ========== -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- 空状态提示文本 - 显示"暂无互关"、"暂无粉丝"、"暂无朋友" -->
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂无内容"
+        android:textSize="16sp"
+        android:textColor="#999999"
+        android:layout_gravity="center" />
+
+</FrameLayout>

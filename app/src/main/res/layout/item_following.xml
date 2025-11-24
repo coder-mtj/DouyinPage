@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ========== 关注列表项布局（每一行用户信息） ========== -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:background="@android:color/white">
+
+    <!-- ========== 第一部分：用户头像（左侧） ========== -->
+    <ImageView
+        android:id="@+id/user_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/avatar_1"
+        android:contentDescription="用户头像"
+        android:scaleType="centerCrop"
+        android:background="@drawable/avatar_background" />
+
+    <!-- ========== 第二部分：用户信息（中间） ========== -->
+    <!-- 包含：用户名 + 认证图标 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginStart="12dp">
+
+        <!-- 用户名文本 -->
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <!-- 金色认证图标（V字） -->
+        <ImageView
+            android:id="@+id/verified_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_verified"
+            android:contentDescription="认证"
+            android:layout_marginStart="4dp"
+            android:scaleType="fitCenter" />
+
+        <!-- 特别关注标签，默认隐藏 -->
+        <TextView
+            android:id="@+id/special_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="特别关注"
+            android:textSize="10sp"
+            android:textColor="#E94057"
+            android:background="@drawable/bg_special_focus"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- ========== 第三部分：已关注按钮（右侧） ========== -->
+    <!-- 可点击按钮，根据关注状态动态切换样式 -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/follow_button"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@null"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="已关注"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <!-- ========== 第四部分：三点菜单按钮（最右侧） ========== -->
+    <!-- 点击弹出底部菜单 -->
+    <ImageButton
+        android:id="@+id/more_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_more"
+        android:contentDescription="更多选项"
+        android:scaleType="center" />
+
+</LinearLayout>

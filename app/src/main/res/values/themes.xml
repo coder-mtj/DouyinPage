@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 应用主题 - 继承 Material Design 无 ActionBar 主题 -->
+    <style name="Theme.DouyinPage" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- 主色调 - 紫色 -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <!-- 主色调变体 - 深紫色 -->
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <!-- 主色调上的文字颜色 - 白色 -->
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- 次色调 - 青色 -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <!-- 次色调变体 - 深青色 -->
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <!-- 次色调上的文字颜色 - 黑色 -->
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- 状态栏颜色 - 白色 -->
+        <item name="android:statusBarColor">@android:color/white</item>
+        <!-- 隐藏窗口标题栏（ActionBar） -->
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources> 
