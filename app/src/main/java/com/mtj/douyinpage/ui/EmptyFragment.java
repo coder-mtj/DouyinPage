@@ -18,7 +18,7 @@ import com.mtj.douyinpage.databinding.FragmentEmptyBinding;
 public class EmptyFragment extends Fragment {
     // 参数键：提示文本
     private static final String ARG_MESSAGE = "message";
-    
+
     // ViewBinding 对象，用于访问布局中的所有视图
     private FragmentEmptyBinding binding;
 
@@ -28,7 +28,7 @@ public class EmptyFragment extends Fragment {
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+            Bundle savedInstanceState) {
         // 使用 ViewBinding 初始化布局
         binding = FragmentEmptyBinding.inflate(inflater, container, false);
         return binding.getRoot();

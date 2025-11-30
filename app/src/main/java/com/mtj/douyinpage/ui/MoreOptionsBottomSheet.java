@@ -46,7 +46,7 @@ public class MoreOptionsBottomSheet extends BottomSheetDialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+            Bundle savedInstanceState) {
         binding = BottomSheetMoreOptionsBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -95,7 +95,8 @@ public class MoreOptionsBottomSheet extends BottomSheetDialogFragment {
 
         binding.copyDouyinButton.setOnClickListener(v -> {
             if (!TextUtils.isEmpty(user.getDouyinId())) {
-                ClipboardManager clipboard = (ClipboardManager) requireContext().getSystemService(android.content.Context.CLIPBOARD_SERVICE);
+                ClipboardManager clipboard = (ClipboardManager) requireContext()
+                        .getSystemService(android.content.Context.CLIPBOARD_SERVICE);
                 if (clipboard != null) {
                     ClipData clip = ClipData.newPlainText("douyinId", user.getDouyinId());
                     clipboard.setPrimaryClip(clip);

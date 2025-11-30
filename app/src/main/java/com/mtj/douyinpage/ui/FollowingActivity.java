@@ -63,16 +63,16 @@ public class FollowingActivity extends AppCompatActivity {
             // 根据位置设置标签文本
             switch (position) {
                 case 0:
-                    tab.setText("互关");      // 第 0 页：互关
+                    tab.setText("互关"); // 第 0 页：互关
                     break;
                 case 1:
-                    tab.setText("关注");      // 第 1 页：关注（默认选中）
+                    tab.setText("关注"); // 第 1 页：关注（默认选中）
                     break;
                 case 2:
-                    tab.setText("粉丝");      // 第 2 页：粉丝
+                    tab.setText("粉丝"); // 第 2 页：粉丝
                     break;
                 case 3:
-                    tab.setText("朋友");      // 第 3 页：朋友
+                    tab.setText("朋友"); // 第 3 页：朋友
                     break;
             }
         }).attach();

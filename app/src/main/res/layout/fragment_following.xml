@@ -6,8 +6,6 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
-    <!-- ========== 第一部分：关注数量标题 ========== -->
-    <!-- 显示"我的关注(xx人)" -->
     <TextView
         android:id="@+id/following_count_text"
         android:layout_width="match_parent"
@@ -20,13 +18,18 @@
         android:paddingTop="12dp"
         android:paddingBottom="12dp" />
 
-    <!-- ========== 第二部分：关注列表（RecyclerView） ========== -->
-    <!-- 显示用户列表，每一行包含：头像、用户名、认证图标、已关注按钮、三点菜单 -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@android:color/white" />
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>
