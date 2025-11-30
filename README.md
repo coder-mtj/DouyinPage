@@ -2,11 +2,8 @@
 
 > 仓库里有两段演示视频：
 
-- [ByteDance_client_problem_explain.mp4](video/ByteDance_client_problem_explain.mp4) — 客户端/问题说明（短演示）
-- [ByteDance_client_project_explain.mp4](video/ByteDance_client_project_explain.mp4) — 项目/实现说明（短演示）
-
 ## 项目
-这是我照着抖音里“关注”页面并以ai辅助写的一个 Android Demo，主要就是打开之后直接跳到一个关注列表。界面里有：
+这是我照着抖音里“关注”页面写的一个 Android Demo，主要就是打开之后直接跳到一个关注列表。界面里有：
 - 顶部有个返回按钮
 - TabLayout + ViewPager2，对应互关/关注/粉丝/朋友四个标签
 - RecyclerView 显示一堆明星的头像和状态
@@ -34,9 +31,6 @@ app/
 - res/layout 关注页面相关 XML
 - drawable 头像资源
 
-## 其他
-* 数据都是写死的，第一次启动会塞一堆默认明星
-
 ## 后端说明（补充）
 
 项目后端放在 `backend/DouyinBackend/DouyinBackend`，是一个轻量的 Spring Boot 服务，主要用于提供明星（star user）相关的 API：
@@ -62,10 +56,6 @@ cd backend\DouyinBackend\DouyinBackend
 - 数据库使用 SQLite，文件名为 `douyin-following.db`（在后端运行目录生成）。
 - 项目自带 `schema.sql`，如果数据量不足，服务会自动生成 1000 条 mock 数据用于开发调试。
 
-更多细节我已写在 `docs/technical-overview.md`，可以去看：
-
 ```
 docs/technical-overview.md
 ```
-
-如果你要我把这个 README 的改动一并提交并推送到 `add-backend` 分支，我可以现在帮你执行（需要你确认）。
