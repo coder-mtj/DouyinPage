@@ -1,5 +1,10 @@
 # DouyinPage
 
+> 仓库里有两段演示视频：
+
+- [ByteDance_client_problem_explain.mp4](video/ByteDance_client_problem_explain.mp4) — 客户端/问题说明（短演示）
+- [ByteDance_client_project_explain.mp4](video/ByteDance_client_project_explain.mp4) — 项目/实现说明（短演示）
+
 ## 项目
 这是我照着抖音里“关注”页面并以ai辅助写的一个 Android Demo，主要就是打开之后直接跳到一个关注列表。界面里有：
 - 顶部有个返回按钮
@@ -31,3 +36,36 @@ app/
 
 ## 其他
 * 数据都是写死的，第一次启动会塞一堆默认明星
+
+## 后端说明（补充）
+
+项目后端放在 `backend/DouyinBackend/DouyinBackend`，是一个轻量的 Spring Boot 服务，主要用于提供明星（star user）相关的 API：
+
+- 技术栈：Spring Boot + SQLite（默认）
+- 可选：Redis 缓存（配置在 `application.properties` 中，默认 `localhost:6379`）
+
+主要接口：
+- GET `/api/stars?page={page}&size={size}`：分页获取明星列表（服务端默认 page=0，size 在服务端被固定为 10）。
+- PATCH `/api/stars/{id}`：更新某个明星的 `specialFollow`、`followed` 与 `remark` 字段，成功返回 204。
+
+快速运行（后端）：
+
+Windows PowerShell：
+```powershell
+cd backend\DouyinBackend\DouyinBackend
+.\mvnw.cmd spring-boot:run
+```
+
+启动后后端默认监听 `http://localhost:8080/`。如果你要在 Android 模拟器中访问，请将客户端 `ApiClient.BASE_URL` 设置为 `http://10.0.2.2:8080/`（或使用宿主机局域网 IP）。
+
+数据库与初始化：
+- 数据库使用 SQLite，文件名为 `douyin-following.db`（在后端运行目录生成）。
+- 项目自带 `schema.sql`，如果数据量不足，服务会自动生成 1000 条 mock 数据用于开发调试。
+
+更多细节我已写在 `docs/technical-overview.md`，可以去看：
+
+```
+docs/technical-overview.md
+```
+
+如果你要我把这个 README 的改动一并提交并推送到 `add-backend` 分支，我可以现在帮你执行（需要你确认）。
